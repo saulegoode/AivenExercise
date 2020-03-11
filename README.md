@@ -1,5 +1,8 @@
 # AivenExercise
-###### Aiven exercise using Kafka, PostgreSQL, and optionally Grafana
+
+Aiven exercise using Kafka, PostgreSQL, and optionally Grafana. 
+
+This exercise was built around work done by John Hammink (https://gist.github.com/Jammink2). It simulates an iBeacon device streaming data using Aiven Kafka and written to a Aiven PostgreSQL instance for further analysis and optionally analysed in a Aiven Grafana instance.
 
 ## Pre-requisites
 Python > 3x with psycopg2 and kafka-python modules loaded
@@ -68,5 +71,4 @@ SELECT create_hypertable('ibeacon_metrics', 'timestamp');
   ORDER BY
         time; ` 
 
-
-
+#### Credits: John Hammink https://gist.github.com/Jammink2
