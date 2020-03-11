@@ -1,34 +1,37 @@
 # AivenExercise
-##Aiven exercise using Kafka, PostgreSQL, and optionally Grafana
+### Aiven exercise using Kafka, PostgreSQL, and optionally Grafana
 
-##Pre-requisites
+## Pre-requisites
 Python > 3x with psycopg2 and kafka-python modules loaded
+
 PostgreSQL client such as psql or PGAdmin 4.x
 
 ## Server Setup
 Create a Aiven Kafka service. 
+
 Create a Aiven PostgreSQL service
+
 [Optional] Create a Aiven Grafana service
 
 Clone this Github repository.
 
-#Kafka setup:
+# Kafka setup:
 
 Download the Access Key, Access Certificate, and CA Certificate from the Overview into the same directory as ibeacon_producer.py.
 
 Edit the ibeacon.properties with appropriate values from console overview.
 
-##PostgreSQL setup:
+## PostgreSQL setup:
 
-Edit ibeacon.properties with appropriate values from console overview.
+### Edit ibeacon.properties with appropriate values from console overview.
 
 Connect to the Aiven PostgreSQL instance with your favorite PostgreSQL client such as psql or PGAdmin.
 
-Load the TimescaleDB Apache 2.0 extension  with:
+### Load the TimescaleDB Apache 2.0 extension  with:
 
 `CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;` 
 
-Create the ibeacon-metrics table with:
+### Create the ibeacon-metrics table with:
 
 `CREATE TABLE IF NOT EXISTS ibeacon_metrics (
   timestamp TIMESTAMP,
@@ -39,7 +42,7 @@ Create the ibeacon-metrics table with:
   accuracy NUMERIC,
   proximity TEXT);`
 
-Convert the table into a TimescaleDB hypertable with:
+### Convert the table into a TimescaleDB hypertable with:
 
 SELECT create_hypertable('ibeacon_metrics', 'timestamp'); 
 
