@@ -15,17 +15,17 @@ Create a Aiven PostgreSQL service
 
 Clone this Github repository.
 
-# Kafka setup:
+## Kafka setup:
 
-Download the Access Key, Access Certificate, and CA Certificate from the Overview into the same directory as ibeacon_producer.py.
+### Download the Access Key, Access Certificate, and CA Certificate from the Overview into the same directory as ibeacon_producer.py.
 
-Edit the ibeacon.properties with appropriate values from console overview.
+### Edit the ibeacon.properties with appropriate values from console overview.
 
 ## PostgreSQL setup:
-
+	
 ### Edit ibeacon.properties with appropriate values from console overview.
 
-Connect to the Aiven PostgreSQL instance with your favorite PostgreSQL client such as psql or PGAdmin.
+### Connect to the Aiven PostgreSQL instance with your favorite PostgreSQL client such as psql or PGAdmin.
 
 ### Load the TimescaleDB Apache 2.0 extension  with:
 
@@ -46,16 +46,17 @@ Connect to the Aiven PostgreSQL instance with your favorite PostgreSQL client su
 
 SELECT create_hypertable('ibeacon_metrics', 'timestamp'); 
 
-Run the ibeacon_setup_test.py script to make sure all is setup correctly. Correct any problems found.
+### Run the ibeacon_setup_test.py script to make sure all is setup correctly. Correct any problems found.
 
-Run ibeacon_producer.py
-Run ibeacon_consumer.py
+### Run ibeacon_producer.py
 
-Connect to the PostgreSQL instance with your favorite client tool such as psql or PGAdmin and issues queries.
+### Run ibeacon_consumer.py
 
-Example queries:
+### Connect to the PostgreSQL instance with your favorite client tool such as psql or PGAdmin and issues queries.
 
-  SELECT 
+### Example queries:
+
+  ` SELECT 
         time_bucket('1 minute', timestamp) AS time,
         uuid,
         avg(measured_power) as power,
@@ -65,7 +66,7 @@ Example queries:
   GROUP BY
         time, uuid
   ORDER BY
-        time;
+        time; ` 
 
 
 
