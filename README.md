@@ -2,7 +2,7 @@
 
 Aiven exercise using Kafka, PostgreSQL, and optionally Grafana. 
 
-This exercise was built around work done by John Hammink (https://gist.github.com/Jammink2). It simulates an iBeacon device streaming data using Aiven Kafka and written to a Aiven PostgreSQL instance for further analysis and optionally analysed in a Aiven Grafana instance.
+This exercise was built around work done by John Hammink (https://gist.github.com/Jammink2). It simulates an iBeacon device streaming data using Aiven hosted Kafka and written to a Aiven hosted PostgreSQL instance for further analysis and optionally analysed in a Aiven hosted Grafana instance.
 
 ## Pre-requisites
 Python > 3x with psycopg2 and kafka-python modules loaded
@@ -12,11 +12,11 @@ PostgreSQL client such as psql or PGAdmin
 GitHub client
 
 ## Server Setup
-Create a Aiven Kafka service. <https://help.aiven.io/en/articles/489572-getting-started-with-aiven-kafka> 
+Create a Aiven hosted Kafka service. <https://help.aiven.io/en/articles/489572-getting-started-with-aiven-kafka> 
 
-Create a Aiven PostgreSQL service <https://help.aiven.io/en/articles/489573-getting-started-with-aiven-postgresql>
+Create a Aiven hosted PostgreSQL service <https://help.aiven.io/en/articles/489573-getting-started-with-aiven-postgresql>
 
-[Optional] Create a Aiven Grafana service <https://help.aiven.io/en/articles/489587-getting-started-with-aiven-grafana>
+[Optional] Create a Aiven hosted Grafana service <https://help.aiven.io/en/articles/489587-getting-started-with-aiven-grafana>
 
 Clone this Github repository using git clone https://github.com/saulegoode/AivenExercise.git.
 
@@ -32,7 +32,7 @@ Edit the ibeacon.properties with appropriate values from console overview.
 	
 Edit ibeacon.properties with appropriate values from console overview.
 
-Connect to the Aiven PostgreSQL instance with your favorite PostgreSQL client such as psql or PGAdmin.
+Connect to the Aiven hosted PostgreSQL instance with your favorite PostgreSQL client such as psql or PGAdmin.
 
 Load the TimescaleDB Apache 2.0 extension  with:
 
@@ -69,7 +69,7 @@ Run ibeacon_producer.py in a console
 
 Run ibeacon_consumer.py in a console
 
-## Analyze the data in Aiven PostgreSQL
+## Analyze the data in Aiven hosted PostgreSQL
 
 Connect to the PostgreSQL instance with your favorite client tool such as psql or PGAdmin and issues queries.
 
