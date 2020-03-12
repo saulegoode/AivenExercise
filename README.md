@@ -34,29 +34,27 @@ Connect to the Aiven PostgreSQL instance with your favorite PostgreSQL client su
 
 Load the TimescaleDB Apache 2.0 extension  with:
 
-`CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;` 
+```sql
+CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+``` 
 
 Create the ibeacon-metrics table with:
 
-`CREATE TABLE IF NOT EXISTS ibeacon_metrics (`
-
-  `timestamp TIMESTAMP,`
-
-  `uuid uuid NOT NULL,`
-
-  `major NUMERIC,`
-
-  `measured_power NUMERIC,`
-
-  `rssi NUMERIC,`
-
-  `accuracy NUMERIC,`
-
-  `proximity TEXT);`
+```sql
+CREATE TABLE IF NOT EXISTS ibeacon_metrics (
+        timestamp TIMESTAMP,
+        uuid uuid NOT NULL,
+        major NUMERIC,
+        measured_power NUMERIC,
+        rssi NUMERIC,
+        accuracy NUMERIC,
+        proximity TEXT);
 
 Convert the table into a TimescaleDB hypertable with:
 
-`SELECT create_hypertable('ibeacon_metrics', 'timestamp');` 
+```sql
+SELECT create_hypertable('ibeacon_metrics', 'timestamp');
+```
 
 ## Testing
 
@@ -74,17 +72,18 @@ Connect to the PostgreSQL instance with your favorite client tool such as psql o
 
 Example queries:
 
-  `SELECT`
- 
-        `time_bucket('1 minute', timestamp) AS time,`
-        `uuid,`
-        `avg(measured_power) as power,`
-        `avg(rssi) as rssi`
-  `FROM 
-        `ibeacon_metrics`
-  `GROUP BY`
-        `time, uuid`
-  `ORDER BY`
-        `time;` ` 
+```sql
+SELECT
+        time_bucket('1 minute', timestamp) AS time,
+        uuid,
+        avg(measured_power) as power,
+        avg(rssi) as rssi
+  FROM 
+        ibeacon_metrics
+  GROUP BY
+        time, uuid
+  ORDER BY
+        time;
+``` 
 
 ## Credits: John Hammink https://gist.github.com/Jammink2
