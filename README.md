@@ -16,7 +16,7 @@ Create a Aiven Kafka service. <https://help.aiven.io/en/articles/489572-getting-
 
 Create a Aiven PostgreSQL service <https://help.aiven.io/en/articles/489573-getting-started-with-aiven-postgresql>
 
-[Optional] Create a Aiven Grafana service
+[Optional] Create a Aiven Grafana service <https://help.aiven.io/en/articles/489587-getting-started-with-aiven-grafana>
 
 Clone this Github repository using git clone https://github.com/saulegoode/AivenExercise.git.
 
@@ -26,7 +26,7 @@ Download the Access Key, Access Certificate, and CA Certificate from the Overvie
 
 Edit the ibeacon.properties with appropriate values from console overview.
 
-**Create a Kafka topic in the Aiven console tab topics named demo-topic.**
+**IMPORTANT** Create a Kafka topic in the Aiven console tab topics named demo-topic.
 
 ## PostgreSQL setup:
 	
