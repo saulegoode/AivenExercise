@@ -38,21 +38,21 @@ Load the TimescaleDB Apache 2.0 extension  with:
 
 Create the ibeacon-metrics table with:
 
-`CREATE TABLE IF NOT EXISTS ibeacon_metrics (
+`CREATE TABLE IF NOT EXISTS ibeacon_metrics (`
 
-  timestamp TIMESTAMP,
+  `timestamp TIMESTAMP,`
 
-  uuid uuid NOT NULL,
+  `uuid uuid NOT NULL,`
 
-  major NUMERIC,
+  `major NUMERIC,`
 
-  measured_power NUMERIC,
+  `measured_power NUMERIC,`
 
-  rssi NUMERIC,
+  `rssi NUMERIC,`
 
-  accuracy NUMERIC,
+  `accuracy NUMERIC,`
 
-  proximity TEXT);`
+  `proximity TEXT);`
 
 Convert the table into a TimescaleDB hypertable with:
 
@@ -60,7 +60,7 @@ Convert the table into a TimescaleDB hypertable with:
 
 ## Testing
 
-Run the ibeacon__test.py script to make sure all is setup correctly. Correct any problems found.
+Run the ibeacon-test.py script to make sure all is setup correctly. Correct any problems found.
 
 ## Run the Kafka producer and Kafka consumer (in seperate consoles)
 
@@ -74,16 +74,17 @@ Connect to the PostgreSQL instance with your favorite client tool such as psql o
 
 Example queries:
 
-  ` SELECT 
-        time_bucket('1 minute', timestamp) AS time,
-        uuid,
-        avg(measured_power) as power,
-        avg(rssi) as rssi
-  FROM 
-        ibeacon_metrics
-  GROUP BY
-        time, uuid
-  ORDER BY
-        time; ` 
+  `SELECT`
+ 
+        `time_bucket('1 minute', timestamp) AS time,`
+        `uuid,`
+        `avg(measured_power) as power,`
+        `avg(rssi) as rssi`
+  `FROM 
+        `ibeacon_metrics`
+  `GROUP BY`
+        `time, uuid`
+  `ORDER BY`
+        `time;` ` 
 
 ## Credits: John Hammink https://gist.github.com/Jammink2
