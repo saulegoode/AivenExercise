@@ -18,7 +18,7 @@ Create a Aiven hosted PostgreSQL service <https://help.aiven.io/en/articles/4895
 
 [Optional] Create a Aiven hosted Grafana service <https://help.aiven.io/en/articles/489587-getting-started-with-aiven-grafana>
 
-Clone this Github repository using git clone https://github.com/saulegoode/AivenExercise.git.
+Clone this Github repository using `git clone https://github.com/saulegoode/AivenExercise.git`.
 
 ## Kafka setup:
 
