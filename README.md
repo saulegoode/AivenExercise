@@ -12,9 +12,9 @@ PostgreSQL client such as psql or PGAdmin
 GitHub client
 
 ## Server Setup
-Create a Aiven Kafka service. 
+Create a Aiven Kafka service. <https://help.aiven.io/en/articles/489572-getting-started-with-aiven-kafka> 
 
-Create a Aiven PostgreSQL service
+Create a Aiven PostgreSQL service <https://help.aiven.io/en/articles/489573-getting-started-with-aiven-postgresql>
 
 [Optional] Create a Aiven Grafana service
 
@@ -25,6 +25,8 @@ Clone this Github repository using git clone https://github.com/saulegoode/Aiven
 Download the Access Key, Access Certificate, and CA Certificate from the Overview into the same directory as ibeacon_producer.py.
 
 Edit the ibeacon.properties with appropriate values from console overview.
+
+**Create a Kafka topic in the Aiven console tab topics named demo-topic.**
 
 ## PostgreSQL setup:
 	
@@ -49,6 +51,7 @@ CREATE TABLE IF NOT EXISTS ibeacon_metrics (
         rssi NUMERIC,
         accuracy NUMERIC,
         proximity TEXT);
+```
 
 Convert the table into a TimescaleDB hypertable with:
 
@@ -62,9 +65,9 @@ Run the ibeacon-test.py script to make sure all is setup correctly. Correct any 
 
 ## Run the Kafka producer and Kafka consumer (in seperate consoles)
 
-Run ibeacon_producer.py
+Run ibeacon_producer.py in a console
 
-Run ibeacon_consumer.py
+Run ibeacon_consumer.py in a console
 
 ## Analyze the data in Aiven PostgreSQL
 
