@@ -26,7 +26,7 @@ Download the Access Key, Access Certificate, and CA Certificate from the Overvie
 
 Edit the ibeacon.properties with appropriate values from console overview.
 
-**IMPORTANT** Create a Kafka topic in the Aiven console tab topics named demo-topic.
+**Note** Create a Kafka topic in the Aiven console using the Topics tab. The topic should be named demo-topic.
 
 ## PostgreSQL setup:
 	
