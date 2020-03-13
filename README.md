@@ -63,11 +63,17 @@ SELECT create_hypertable('ibeacon_metrics', 'timestamp');
 
 Run the ibeacon-test.py script to make sure all is setup correctly. Correct any problems found.
 
+`python ./ibeacon-test.py`
+
 ## Run the Kafka producer and Kafka consumer (in separate consoles)
 
-Run ibeacon_producer.py in a console
+Run ibeacon_producer.py in a console. ibeacon_producer.py requires one argument: the number of records to generate and send.
+
+`python ./ibeacon_producer 10000`
 
 Run ibeacon_consumer.py in a console
+
+`python ./ibeacon_consumer`
 
 ## Analyze the data in Aiven hosted PostgreSQL
 
