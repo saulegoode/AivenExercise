@@ -63,7 +63,7 @@ SELECT create_hypertable('ibeacon_metrics', 'timestamp');
 
 Run the ibeacon-test.py script to make sure all is setup correctly. Correct any problems found.
 
-## Run the Kafka producer and Kafka consumer (in seperate consoles)
+## Run the Kafka producer and Kafka consumer (in separate consoles)
 
 Run ibeacon_producer.py in a console
 
